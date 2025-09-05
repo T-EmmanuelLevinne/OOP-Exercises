@@ -57,21 +57,29 @@ public class WaterTank {
     public boolean isEmpty() {
         return currentLevel == 0;
     }
-      // container nani
+
     public void displayTank() {
-        int height = 10; // number of rows for visualization
+        int height = 10; 
         int filledRows = (int) Math.round((currentLevel / capacity) * height);
 
-        System.out.println("\nTank Visualization:");
+
+        System.out.println("        ╔════════╗"); 
         for (int i = height; i > 0; i--) {
             if (i <= filledRows) {
-                System.out.println("|~~~~~~~~|"); // water block
+                if (i == filledRows) {
+                    System.out.println("        ║~~~~~~~~║"); 
+                } else {
+                    System.out.println("        ║████████║"); 
+                }
             } else {
-                System.out.println("|        |"); // empty space
+                System.out.println("        ║        ║");
             }
         }
-        System.out.println("|________|");
-        System.out.printf("Capacity: %.1f Liters | Current Level: %.1f Liters \n", capacity, currentLevel);
+        System.out.println("        ╚════════╝"); 
+
+        double percent = (currentLevel / capacity) * 100;
+        System.out.printf("Capacity: %.1f Liters | Current Level: %.1f Liters (%.1f%%)\n",
+                capacity, currentLevel, percent);
     }
 
 }
