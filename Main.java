@@ -8,13 +8,13 @@ public class Main {
         while (tank == null) {
             System.out.print("Enter water tank capacity (liters): ");
             try {
-                double capacity = console.nextDouble(); 
-                tank = new WaterTank(capacity);          
+                double capacity = console.nextDouble();
+                tank = new WaterTank(capacity);
             } catch (InputMismatchException e) {
                 System.out.println("Invalid input, try using numbers.");
                 console.nextLine();
             } catch (IllegalArgumentException e) {
-                System.out.println(e.getMessage()); 
+                System.out.println(e.getMessage());
             }
         }
 
@@ -31,24 +31,24 @@ public class Main {
             int choice = -1;
             try {
                 System.out.print("Enter your choice (1 to 7): ");
-                choice = console.nextInt();  
+                choice = console.nextInt();
             } catch (InputMismatchException e) {
                 System.out.println("Invalid choice! Please enter a number.");
-                console.nextLine(); 
-                continue; 
+                console.nextLine();
+                continue;
             }
 
             switch (choice) {
                 case 1:
                     System.out.println("Enter liters to add: ");
                     double add = console.nextDouble();
-                    tank.addWater(add);
+                    tank.fill(add);
                     break;
 
                 case 2:
                     System.out.println("Enter liters to drain: ");
                     double drainWater = console.nextDouble();
-                    tank.removeWater(drainWater);
+                    tank.drain(drainWater);
                     break;
 
                 case 3:
