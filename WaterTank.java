@@ -14,7 +14,7 @@ public class WaterTank {
     }
 
     // add ug tubig
-    public void addWater(double liters) {
+    public void fill(double liters) {
         if (liters <= 0) {
             System.out.println("Invalid amount, numbers should always be positive.");
             return;
@@ -30,7 +30,7 @@ public class WaterTank {
     }
 
     // remove ug tubig
-    public void removeWater(double liters) {
+    public void drain(double liters) {
         if (liters <= 0) {
             System.out.println("Invalid amount, numbers should always be positive.");
             return;
@@ -59,17 +59,17 @@ public class WaterTank {
     }
 
     public void displayTank() {
-        int height = 10; 
+        int height = 10;
         int filledRows = (int) Math.round((currentLevel / capacity) * height);
 
 
-        System.out.println("        ╔════════╗"); 
+        System.out.println("        ╔════════╗");
         for (int i = height; i > 0; i--) {
             if (i <= filledRows) {
                 if (i == filledRows) {
-                    System.out.println("        ║~~~~~~~~║"); 
+                    System.out.println("        ║~~~~~~~~║");
                 } else {
-                    System.out.println("        ║████████║"); 
+                    System.out.println("        ║████████║");
                 }
             } else {
                 System.out.println("        ║        ║");
