@@ -71,7 +71,8 @@ public class Main {
 
                 case 5:
                     if (tank.isEmpty()) {
-                        System.out.println("Tank is Empty");
+                        System.out.println("Tank is still at: ");
+                        tank.displayTank();
                     } else {
                         System.out.println("Tank is still at: " + tank.getCurrentLevel() + " liters and not empty.");
                     }
@@ -82,6 +83,7 @@ public class Main {
                         System.out.println("Tank is Full");
                     } else {
                         System.out.println("The tank is not full, current water level: " + tank.getCurrentLevel());
+                        tank.displayTank();
                     }
                     break;
 
