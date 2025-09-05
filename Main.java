@@ -40,15 +40,25 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    System.out.println("Enter liters to add: ");
-                    double add = console.nextDouble();
-                    tank.fill(add);
+                    try {
+                        System.out.println("Enter liters to add: ");
+                        double add = console.nextDouble();
+                        tank.fill(add);
+                    } catch (InputMismatchException e) {
+                        System.out.println("Invalid input! Please enter a number.");
+                        console.nextLine();
+                    }
                     break;
 
                 case 2:
-                    System.out.println("Enter liters to drain: ");
-                    double drainWater = console.nextDouble();
-                    tank.drain(drainWater);
+                    try {
+                        System.out.println("Enter liters to drain: ");
+                        double drainWater = console.nextDouble();
+                        tank.drain(drainWater);
+                    } catch (InputMismatchException e) {
+                        System.out.println("Invalid input! Please enter a number.");
+                        console.nextLine();
+                    }
                     break;
 
                 case 3:
